@@ -23,7 +23,7 @@ resource "aws_ecs_task_definition" "bitwarden_td" {
 
   container_definitions = templatefile("${path.module}/templates/bitwarden_task.json", {
     db_username         = "${local.name}-mysql"
-    db_password         = "Test123456789"
+    db_password         = local.db_password
   })
 
   volume {

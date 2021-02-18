@@ -28,15 +28,21 @@
         "environment": [
             {
                 "name": "DB_USERNAME",
-                "value": "${ db_username }"
-            },
-            {
-                "name": "DB_PASSWORD",
-                "value": "${ db_password }"
+                "value": "${db_username}"
             },
             {
                 "name": "DATABASE_PORT",
                 "value": "3306"
+            },
+            {
+                "name": "DATABASE_URL",
+                "value": "${db_endpoint}"
+            }
+        ],
+        "secrets": [
+            {
+                "name": "AWS_SECRETS",
+                "value": "${db_password}"   
             }
         ]
     }

@@ -18,21 +18,11 @@ provider "aws" {
 # Setup the backend #
 #####################
 terraform {
-  required_version = ">= 0.13"
-  # backend "s3" {}
-  
-}
-
-####################
-# Backend for Prod #
-####################
-
-#### For Prod ideally we need to create a S3 bucket to store our state files in 
-terraform {
+  required_version = ">= 0.13" 
   backend "s3" {
-    bucket = "henriquehenriquehenrique1986"
-    region = "us-east-1" 
+    bucket = "<your_bucket_name>"
+    region = var.region 
     key = "terraform/bitwarden/ACM/state.tf"
   }
   required_version = ">= 0.13"
-}
+} 

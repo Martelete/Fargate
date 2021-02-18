@@ -1,10 +1,3 @@
-##################
-# IMPORTANT NOTE #
-##################
-
-### The certificate is already created in our AWS account once pushed to Prod. We are going to use *.zaizi.com for Prod.
-### We are just testing the ssl_certificate on Linux Academy account hence the creation of this section
-
 resource "aws_acm_certificate" "ssl_cert" {
   domain_name       = var.domain_name
   validation_method = "DNS"

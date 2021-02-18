@@ -1,5 +1,5 @@
 variable "region" {
-    default = "us-east-1"
+    default = "eu-west-1"
 }
 
 variable "env" {
@@ -19,9 +19,10 @@ variable "ecs_as_cpu_high_threshold_per" {
 }
 
 variable "domain_name" {
-  default = "*.cmcloudlab1719.info"    ### Add with wildcard (i.e. "*.cmcloudlab1694.info")
+    description = "The DNS you want to create with wildcard"
+    default = ""    ### The hosted zone name with wildcard (i.e. "*.example.com")
 }
-
 variable "dns_name" {
-  default = "cmcloudlab1719.info"    ### Add with dot at the end (i.e. "cmcloudlab1694.info.")
+    description = "The AWS Route53 Hosted Zone name"
+    default = ""    ### The Public hosted zone name without wildcard (i.e. "example.com")
 }

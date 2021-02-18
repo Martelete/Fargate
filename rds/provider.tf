@@ -22,7 +22,7 @@ terraform {
   backend "s3" {
     bucket = "<your_bucket_name>"
     region = var.region 
-    key = "terraform/bitwarden/VPC/state.tf"
+    key = "terraform/bitwarden/RDS/state.tf"
   }
   required_version = ">= 0.13"
 } 
