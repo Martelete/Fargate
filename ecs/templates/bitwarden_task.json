@@ -1,0 +1,43 @@
+[
+    {
+        "name": "bitwarden",
+        "image": "bitwardenrs/server:latest",
+        "essential": true,
+        "cpu": 1024,
+        "memory": 2048,
+        "mountPoints": [
+            {
+              "sourceVolume": "data",
+              "containerPath": "/bw-data"
+            }
+        ],
+        "logConfiguration": {
+            "logDriver": "awslogs",
+            "options": {
+                "awslogs-group": "/ecs/fargate-task-definition/bitwarden",
+                "awslogs-region": "us-east-1",
+                "awslogs-stream-prefix": "ecs"
+            }
+        },
+        "portMappings": [
+            {
+                "containerPort": 80,
+                "hostPort": 80
+            }
+        ],
+        "environment": [
+            {
+                "name": "DB_USERNAME",
+                "value": "${ db_username }"
+            },
+            {
+                "name": "DB_PASSWORD",
+                "value": "${ db_password }"
+            },
+            {
+                "name": "DATABASE_PORT",
+                "value": "3306"
+            }
+        ]
+    }
+]
