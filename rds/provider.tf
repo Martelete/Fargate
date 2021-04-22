@@ -24,5 +24,4 @@ terraform {
     region = var.region 
     key = "terraform/bitwarden/RDS/state.tf"
   }
-  required_version = ">= 0.13"
 } 
